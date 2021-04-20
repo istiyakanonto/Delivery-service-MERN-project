@@ -1,8 +1,8 @@
 # Drutota Delivery Service
 ## PLEASE (NOTE) that *********
-1. When i press 3 times in submit button in checkout page then payment part came.(I really dont understand why its hapinning)
-2. When Admin login as a admin initially he watch order in navbar which not suppose to do. That time if he click home or any link in navbar and then he can see Admin panel
-3. similler for User initially they watch admin panel but if press home or other link then order panel come and admin panel gone.(I really dont know why its happinning would you please consider it and checkout it)
+1. When i press 3 times in submit button in checkout page then payment part came.(I really dont understand why its happining). Mainly I need 3 time submit buttton press for seeing payment part.
+2. When Admin login as a admin initially he watch order in navbar which not suppose to see. That time if he click home or any link in navbar and then he can see Admin panel.
+3. similler for User initially they watch admin panel  which not suppose to see but if press home or others link then order panel come and admin panel gone.(I really dont know why its happinning would you please consider it and checkout it)
 4. I cannot fully complete this assignment for some family problems would you please consider.
 5. 
 Live Link: https://drutota-delivery.web.app
