@@ -1,13 +1,12 @@
 import React from 'react';
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from '../../App';
 import { Table } from "react-bootstrap";
 const OrderList = () => {
     
     const [ordersInformation, setOrdersInformation]=useState([])
 
     useEffect(()=>{
-        fetch ('http://localhost:5040/allOrder')
+        fetch ('https://thawing-shore-57581.herokuapp.com/allOrder')
         .then(res=>res.json())
         .then(data=>setOrdersInformation(data))
     },[])
@@ -23,7 +22,7 @@ const OrderList = () => {
                     <th>Customer Name</th>
                     <th>Email</th>
                     <th>Service Name</th>
-                    <th>Author Name</th>
+                  
                     <th>Payment ID</th>
                     <th>Cost</th>
                   </tr>
@@ -33,7 +32,7 @@ const OrderList = () => {
                   <td>{order.userName}</td>
                   <td>{order.email}</td>
                   <td>{order.serviceName}</td>
-                    <td>{order.authorName}</td>
+                   
                     <td>{order.paymentId}</td>
                     <td>{order.cost}</td>
                   </tr>

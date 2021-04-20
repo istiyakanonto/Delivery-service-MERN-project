@@ -9,7 +9,7 @@ const Order = () => {
   return (
     <Router>
       <div style={{ marginTop: "50px" }} className="  container">
-        <header>Admin Panel</header>
+        <header>Order Panel</header>
         <ul>
           <li>
             <Link to="/bookingList">

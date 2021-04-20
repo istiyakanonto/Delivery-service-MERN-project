@@ -13,7 +13,7 @@ const AddService = () => {
             imageURL: imageURL,
       }
 
-      const url = `http://localhost:5040/addService`;
+      const url = `https://thawing-shore-57581.herokuapp.com/addService`;
       console.log(serviceData);
       fetch(url, {
         method: "POST",

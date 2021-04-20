@@ -13,7 +13,7 @@ const ReviewUs = () => {
             place: data.place,
             imageURL: imageURL,
       }
-      const url = `http://localhost:5040/addReview`;
+      const url = `https://thawing-shore-57581.herokuapp.com/addReview`;
       console.log(reviewData);
       fetch(url, {
         method: "POST",

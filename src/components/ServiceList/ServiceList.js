@@ -1,19 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
-import { Button, Card } from "react-bootstrap";
+
 const ServiceList = () => {
   const [manageService, setManageService] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5040/service")
+    fetch("https://thawing-shore-57581.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => setManageService(data));
   });
   const handleDelete = (id) => {
     if (window.confirm("Are you sure?")) {
-      fetch(`http://localhost:5040/itemDelete/${id}`, {
+      fetch(`https://thawing-shore-57581.herokuapp.com/itemDelete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -68,14 +67,14 @@ const ServiceList = () => {
                   Wanna order??
                 </div>
                 <div class="type">
-                 
-                <button style={{ backgroundColor: "red" }}> Delete
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    onClick={() => handleDelete(service._id)}
-                  />
-                </button>
-                  
+                  <button style={{ backgroundColor: "red" }}>
+                    {" "}
+                    Delete
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      onClick={() => handleDelete(service._id)}
+                    />
+                  </button>
                 </div>
               </div>
               <div class="stat">

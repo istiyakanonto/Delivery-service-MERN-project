@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../../App";
 import logo from "../../../photo/drutotalogo.jpg";
 import './Navbar.css'
+
 const Navbar = () => {
+
+  const [adminPanel, setAdminPanel]=useState([])
+  const [loggedInUser, setLoggedInUser]= useContext(UserContext);
+  
+  useEffect(()=>{
+    fetch ('https://thawing-shore-57581.herokuapp.com/admin')
+    .then(res=>res.json())
+    .then(data=>setAdminPanel(data))
+})
+let newAdmin= {}
+let isAdmin=false;
+if(adminPanel.length>0){
+  newAdmin=adminPanel.find(admin=>admin.email===loggedInUser.email)
+  if (newAdmin)
+  {
+    isAdmin=true;
+  }
+}
+
+console.log(isAdmin)
   return (
     <div className="container">
       <div className="row">
@@ -11,8 +33,11 @@ const Navbar = () => {
         </div>
         <nav className="col-md-10">
         <Link to="/home">Home+</Link>
-          <Link to="/order">Order+</Link>
-          <Link to="/admin">Admin+</Link>
+        {
+          isAdmin ===true? <Link to="/admin">Admin+</Link> :isAdmin===false? <Link to="/order">Order+</Link>  :<p></p>
+        }
+         
+         
           <Link to="/service">Service+</Link>
           <Link to="/review"> Reviews+</Link>
          <Link to="/contactUs">   Contact Us+</Link>
