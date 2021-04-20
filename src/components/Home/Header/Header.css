@@ -1,0 +1,22 @@
+.header-container {
+   height:1100px;
+    position:relative;
+    
+    background-size: cover;
+  
+}
+
+.btn{
+    border:none;
+    font-family: 'montserrat',sans-serif;
+    text-transform:uppercase;
+    border-radius:6px;
+    cursor: pointer;
+    color:#fff;
+    background-size: 200%;
+    transition: 0.6s;
+}
+.btn1{
+    background-image: linear-gradient(to left, #FFC312,#EE5A24,#FFC312);
+    margin-bottom: 20px;
+}
