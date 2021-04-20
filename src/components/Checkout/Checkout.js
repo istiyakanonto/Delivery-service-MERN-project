@@ -9,9 +9,11 @@ const CheckOut = () => {
     const {register,handleSubmit,watch,formState: { errors }} = useForm();
   const [id, setId] = useContext(IdContext);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+ 
   // const {id} = useParams();
   
   const [service, setService] = useState([]);
+  const [serviceData, setServiceData]=useState(null)
   useEffect(() => {
     fetch(`http://localhost:5040/serve/${id.id}`)
       .then((res) => res.json())
@@ -20,11 +22,15 @@ const CheckOut = () => {
 
  
 
-   const onSubmit = (data) => {
+   const onSubmit = data => {
+    setServiceData(data)
+  };
+  const handlePaymentSuccess = paymentId =>{
     const userInfo = {
         userName: loggedInUser.name,
         email: loggedInUser.email,
         serviceName: service.name,
+        paymentId,
         cost: service.cost
        };
     const url = 'http://localhost:5040/addProduct';
@@ -38,11 +44,11 @@ const CheckOut = () => {
       body: JSON.stringify(userInfo),
     })
     .then((res) => console.log("server site response", res));
-  };
+  }
   return (
    <div className="container">
         <div style={{marginTop:'40px'}} className="row ">
-      <div className="col-md-6">
+      <div style={{display: serviceData ? 'none': 'block'}} className="col-md-6">
         {/* <input type="text" value={loggedInUser.name} />
         <br />
         <input type="text" value={loggedInUser.email} />
@@ -117,9 +123,9 @@ const CheckOut = () => {
 
 
       </div>
-      <div className="col-md-6">
+      <div style={{display: serviceData ? 'block': 'none'}}  className="col-md-6">
           <h2>Please Pay</h2>
-          <ProcessPayment></ProcessPayment>
+          <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
       </div>
     </div>
    </div>
