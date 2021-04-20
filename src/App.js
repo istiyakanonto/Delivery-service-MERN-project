@@ -21,7 +21,7 @@ function App() {
   
   const [loggedInUser, setLoggedInUser] = useState({});
   const [id, setId] = useState({});
-  console.log(id)
+
   return (
     <IdContext.Provider value={[id, setId]}>
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>

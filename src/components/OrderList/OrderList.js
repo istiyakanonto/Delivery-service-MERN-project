@@ -1,112 +1,52 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React from 'react';
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from '../../App';
 import { Table } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
-import { Button, Card } from "react-bootstrap";
 const OrderList = () => {
-  const [manageService, setManageService] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5040/service")
-      .then((res) => res.json())
-      .then((data) => setManageService(data));
-  });
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure?")) {
-      fetch(`http://localhost:5040/itemDelete/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-        });
-    }
-  };
-  return (
-    <div className="row">
-      {manageService.map((service) => (
-        <div className="col-md-4">
-          <div style={{ marginBottom: "30px" }} class="card">
-            <div class="card-image">
-              <img
-                style={{ height: "300px", width: "350px", paddingTop: "20px" }}
-                src={service.imageURL}
-                alt="Error"
-              />
-            </div>
-            <div class="card-text">
-              <span class="date"> Added New: 4 days ago</span>
-              <h2> {service.name} </h2>
-            </div>
-            <div class="card-stats">
-              <div class="stat">
-                <div
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                    color: "#4B0016",
-                    borderBottom: "1px solid gray",
-                  }}
-                  class="value"
-                >
-                  Service <br /> Description
-                </div>
-                <div style={{ color: "black" }} class="type">
-                  {" "}
-                  {service.description}
-                </div>
-              </div>
-              <div class="stat border">
-                <div
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                    color: "#4B0016",
-                  }}
-                  class="value"
-                >
-                  Wanna order??
-                </div>
-                <div class="type">
-                 
-                <button style={{ backgroundColor: "red" }}> Delete
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    onClick={() => handleDelete(service._id)}
-                  />
-                </button>
+    
+    const [ordersInformation, setOrdersInformation]=useState([])
+
+    useEffect(()=>{
+        fetch ('http://localhost:5040/allOrder')
+        .then(res=>res.json())
+        .then(data=>setOrdersInformation(data))
+    },[])
+   
+    return (
+        <div className="container">
+           
+            <p>Total Panding Order= {ordersInformation.length}</p>
+            {
+                ordersInformation.map(order=> <Table style={{borderBottom: '1px solid red'}} className="container" striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Service Name</th>
+                    <th>Author Name</th>
+                    <th>Payment ID</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  <td>{order.userName}</td>
+                  <td>{order.email}</td>
+                  <td>{order.serviceName}</td>
+                    <td>{order.authorName}</td>
+                    <td>{order.paymentId}</td>
+                    <td>{order.cost}</td>
+                  </tr>
                   
-                </div>
-              </div>
-              <div class="stat">
-                <div
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                    color: "#4B0016",
-                    borderBottom: "1px solid gray",
-                  }}
-                  class="value"
-                >
-                  Discount Price
-                </div>
-                <div
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "30px",
-                    color: "orange",
-                  }}
-                  class="type"
-                >
-                  {service.cost}$
-                </div>
-              </div>
-            </div>
-          </div>
+                  
+                </tbody>
+              </Table>)
+              
+            }
+           
+
         </div>
-      ))}
-    </div>
-  );
+    );
 };
 
 export default OrderList;

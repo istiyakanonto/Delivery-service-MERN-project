@@ -2,10 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQrcode, faPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
-import OrderList from '../OrderList/OrderList';
+
 import AddService from '../AddService/AddService';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import './Admin.css'
+import ServiceList from '../ServiceList/ServiceList';
+import OrderList from '../OrderList/OrderList';
 const Admin = () => {
     return (
         <Router>
@@ -18,6 +20,14 @@ const Admin = () => {
                 <FontAwesomeIcon icon={faQrcode} />Order List
               </Link>
             </li>
+
+            <li>
+              <Link to="/serviceList">
+                {" "}
+                <FontAwesomeIcon icon={faQrcode} />Service List
+              </Link>
+            </li>
+
   
             <li>
               <Link to="/addServices">
@@ -34,8 +44,11 @@ const Admin = () => {
           </ul>
           <hr />
           <Switch>
-            <Route path="/orderList">
-              <OrderList></OrderList>
+          <Route path="/orderList">
+           <OrderList></OrderList>
+            </Route>
+            <Route path="/serviceList">
+             <ServiceList></ServiceList>
             </Route>
             <Route path="/addServices">
             <AddService></AddService>

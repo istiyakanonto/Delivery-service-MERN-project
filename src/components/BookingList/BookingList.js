@@ -19,7 +19,7 @@ const BookingList = () => {
     return (
         <div className="container">
             <h2 style={{marginTop:'20px',marginBottom:'10px',color:'#420420'}}>Greeting..{loggedInUser.name}</h2>
-            <p>Your Total Buying Books {ordersInformation.length}</p>
+            <p>Your Total Amount Of Order {ordersInformation.length}</p>
             {
                 ordersInformation.map(order=> <Table style={{borderBottom: '1px solid red'}} className="container" striped bordered hover variant="dark">
                 <thead>
