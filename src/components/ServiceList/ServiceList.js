@@ -67,8 +67,8 @@ const ServiceList = () => {
                   Wanna order??
                 </div>
                 <div class="type">
-                  <button style={{ backgroundColor: "red" }}>
-                  onClick={() => handleDelete(service._id)}
+                  <button style={{ backgroundColor: "red" }}  onClick={() => handleDelete(service._id)}>
+                 
                     {" "}
                     Delete
                     <FontAwesomeIcon
