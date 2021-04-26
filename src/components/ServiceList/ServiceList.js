@@ -68,11 +68,12 @@ const ServiceList = () => {
                 </div>
                 <div class="type">
                   <button style={{ backgroundColor: "red" }}>
+                  onClick={() => handleDelete(service._id)}
                     {" "}
                     Delete
                     <FontAwesomeIcon
                       icon={faTrashAlt}
-                      onClick={() => handleDelete(service._id)}
+                      
                     />
                   </button>
                 </div>
