@@ -1,71 +1,35 @@
-# Getting Started with Create React App
+# Drutota Delivery Service
+## PLEASE (NOTE) that *********
+1. When i press 3 times in submit button in checkout page then payment part came.(I really dont understand why its happining). Mainly I need 3 time submit buttton press for seeing payment part.
+2. When Admin login as a admin initially he watch order in navbar which not suppose to see. That time if he click home or any link in navbar and then he can see Admin panel.
+3. similler for User initially they watch admin panel  which not suppose to see but if press home or others link then order panel come and admin panel gone.(I really dont know why its happinning would you please consider it and checkout it)
+4. I cannot fully complete this assignment for some family problems would you please consider.
+5. 
+Live Link: https://drutota-delivery.web.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Home Page
+here this site has 6 part 
+1. header, which has nav bar as well as some information
+2. service, Which dynamically provide for the customer
+3. service app (Extra)
+4. Customer Review
+5. Company Video (Extra)
+6. Footer
+7. 
+### Functionallity for (User)
+User can use Order panel
+User can not watch Admin panel
+1. dynamic represent service card and review
+2. if you select any service it take you check out page after confermation **(here i faced problem in checkout page you need 3 click for going to payment mathod) you need to pay 
+3. you can watch your order list and total cost
+4. you can review us(can add your image which can show in front page)
 
-## Available Scripts
+#### Functionallity for (Admin)
+1. Admin can use Admin panel
+2. Admin Cannot watch Order panel
+3. Admin can see All order 
+4. Admin can add Service in Add Services link Which will show in Front page 
+5. Admin can delete Service from service list
+6. Admin can add new Admin
 
-In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# complete-website-client-istiyakanonto
