@@ -15,7 +15,7 @@ const CheckOut = () => {
   const [service, setService] = useState([]);
   const [serviceData, setServiceData]=useState(null)
   useEffect(() => {
-    fetch(`http://localhost:5040/serve/${id.id}`)
+    fetch(`https://thawing-shore-57581.herokuapp.com/serve/${id.id}`)
       .then((res) => res.json())
       .then((data) => setService(data[0]));
   }, []);
@@ -33,7 +33,7 @@ const CheckOut = () => {
         paymentId,
         cost: service.cost
        };
-    const url = 'http://localhost:5040/addProduct';
+    const url = 'https://thawing-shore-57581.herokuapp.com/addProduct';
 
     fetch(url, {
       method: "POST",
